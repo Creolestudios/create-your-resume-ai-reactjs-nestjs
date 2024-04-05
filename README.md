@@ -114,7 +114,7 @@ The project follows a modular and organized structure to enhance readability, ma
 
 ## 6. Deployment
 
-The TranscriptGpt App is deployed and accessible online. You can use the following link to access the application: [LazyResumes](http://lazyresumes.com/)
+The LazyResume App is deployed and accessible online. You can use the following link to access the application: [LazyResumes](http://lazyresumes.com/)
 
 ## 7. Usage
 
