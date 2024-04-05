@@ -1,0 +1,233 @@
+.downloadHeadingText {
+  color: #4a4543;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 35px;
+  }
+  @media screen and (max-width: 1199px) {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  @media screen and (max-width: 991px) {
+    font-size: 24px;
+  }
+}
+
+.downloadStaticText {
+  color: #808080;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 991px) {
+    font-size: 14px;
+  }
+}
+
+.downloadReady {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0px 10px 0;
+
+  button {
+    max-width: 171px;
+    flex: 1;
+    height: 45px;
+    background-color: #fff;
+    color: #4a4543;
+    font-size: 20px;
+    cursor: pointer !important;
+    border-radius: 8px;
+    border: 1px solid #dadada;
+    margin-right: 28px;
+    @media screen and (max-width: 1440px) {
+      height: 42px;
+      font-size: 18px;
+    }
+    @media screen and (max-width: 1199px) {
+      height: 40px;
+      font-size: 16px;
+    }
+    @media screen and (max-width: 991px) {
+      height: 38px;
+      font-size: 15px;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    span {
+      cursor: pointer !important;
+    }
+  }
+
+  button:hover {
+    background-color: #fff !important;
+    color: #4a4543 !important;
+    border-color: #dadada !important;
+  }
+}
+
+.tryagain {
+  button {
+    width: 100%;
+    flex: 1;
+    height: 45px;
+    background-color: #fff;
+    color: #4a4543;
+    font-size: 20px;
+    cursor: pointer !important;
+    border-radius: 8px;
+    border: 1px solid #dadada;
+    margin-right: 28px;
+    @media screen and (max-width: 1440px) {
+      height: 42px;
+      font-size: 18px;
+    }
+    @media screen and (max-width: 1199px) {
+      height: 40px;
+      font-size: 16px;
+    }
+    @media screen and (max-width: 991px) {
+      height: 38px;
+      font-size: 15px;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    span {
+      cursor: pointer !important;
+    }
+  }
+
+  button:hover {
+    background-color: #fff !important;
+    color: #4a4543 !important;
+    border-color: #dadada !important;
+  }
+}
+
+.share {
+  margin-top: 90px;
+  position: absolute;
+  left: -20px;
+  bottom: 0;
+  @media screen and (max-width: 1024px) {
+    position: unset;
+    left: unset;
+    bottom: unset;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  p {
+    font-size: 16px;
+    padding-left: 140px;
+
+    @media screen and (max-width: 1199px) {
+      // padding-left: 15px;
+      font-size: 14px;
+    }
+  }
+}
+
+.imglogo {
+  display: flex;
+}
+
+.orText {
+  // margin-left: 170px;
+  // max-width: 370px;
+  // text-align: center;
+  margin-bottom: 10px;
+  color: #808080;
+  display: flex;
+  justify-content: center;
+}
+
+.errorClass {
+  font-size: 18px;
+  color: red;
+  margin-top: 5px;
+}
+
+.showTemplates {
+  margin-top: 22px;
+  display: flex;
+}
+
+.templates {
+  height: 300px;
+  width: 191px;
+  flex: 1;
+  margin-right: 35px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: opacity 0.3s, box-shadow 0.3s;
+
+  @media screen and (max-width: 1490px) {
+    width: 165px;
+    margin-right: 25px;
+  }
+  @media screen and (max-width: 1270px) {
+    width: 134px;
+    margin-right: 20px;
+  }
+  @media screen and (max-width: 991px) {
+    width: 93px;
+  }
+}
+
+.templates:last-child {
+  margin-right: 5px; /* Remove margin-right for the last image */
+}
+
+.showTitle {
+  margin-top: 10px;
+  display: flex;
+}
+
+.templateTitle {
+  width: 190px;
+  flex: 1;
+  margin-right: 35px;
+  margin-left: 5px;
+
+  @media screen and (max-width: 1490px) {
+    width: 165px;
+    margin-right: 25px;
+  }
+  @media screen and (max-width: 1270sloth-gifpx) {
+    width: 134px;
+    margin-right: 20px;
+  }
+  @media screen and (max-width: 991px) {
+    width: 95px;
+  }
+}
+
+.templateTitle:last-child {
+  margin-right: 0; /* Remove margin-right for the last image */
+}
+
+.selected {
+  box-shadow: 0px 0px 10px gray;
+}
+
+// .not-selected {
+//   opacity: 0.5; /* You can adjust the opacity value */
+// }
+
+.tempDesc {
+  height: 105px;
+}

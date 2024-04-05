@@ -1,0 +1,102 @@
+.staticHeadingText {
+  color: #000;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25);
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 58px;
+  letter-spacing: 2.3px;
+  padding-top: 152px;
+  text-align: center;
+  @media (max-width: 1440px) {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  @media (max-width: 1199px) {
+    font-size: 30px;
+    line-height: 40px;
+    padding-top: 120px;
+  }
+}
+
+.staticText {
+  @media screen and (max-width: 1199px) {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  p {
+    margin-top: 36px;
+    margin-left: 82px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    @media (max-width: 1600px) {
+      margin-top: 30px;
+    }
+    @media (max-width: 1199px) {
+      margin-left: 20px;
+      font-size: 16px;
+      margin-top: 25px;
+    }
+  }
+
+  span {
+    margin-right: 10px;
+    display: flex;
+    img {
+      @media screen and (max-width: 1199px) {
+        width: 30px;
+      }
+    }
+  }
+}
+
+.sunLogo {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin-top: 62px;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: 1600px) {
+    width: 180px;
+    height: 180px;
+  }
+  @media screen and (max-width: 1199px) {
+    width: 165px;
+    height: 165px;
+  }
+}
+
+.sunLogo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../images/Background_Sunset.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.sloth1 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  @media screen and (max-width: 1600px) {
+    width: 100px;
+    height: 100px;
+  }
+  @media screen and (max-width: 1199px) {
+    width: 90px;
+    height: 90px;
+  }
+}

@@ -1,0 +1,46 @@
+$right-bg-color: #f8f2f0;
+$left-bg-color: #ffffff;
+
+.col1 {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
+  width: 100%;
+  background-color: $left-bg-color;
+  padding: 152px 15px 0 15px;
+  @media screen and (max-width: 1199px) {
+    padding: 120px 15px 0 15px;
+  }
+  .googleLogin {
+    width: 100%;
+    padding-left: 165px;
+    padding-right: 65px;
+    @media screen and (max-width: 1440px) {
+      padding-left: 130px;
+      padding-right: 30px;
+    }
+    @media screen and (max-width: 1199px) {
+      padding-left: 50px;
+      padding-right: 20px;
+    }
+    @media screen and (max-width: 991px) {
+      padding-left: 0;
+      padding-right: 0;
+      max-width: 350px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.col2 {
+  // display: flex;
+  // justify-content: center;
+  // padding: 0px 15px 0 15px;
+  // margin-left: auto;
+  // margin-right: auto;
+  height: 100vh;
+  width: 100%;
+  background-color: $right-bg-color;
+}

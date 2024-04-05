@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume 3</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+        /* width: 820px;
+        display: flex;
+        align-items: center; */
+      }
+      table {
+        /* width: 100%; */
+        border-collapse: collapse;
+      }
+
+      ul {
+        padding-inline-start: 20px !important;
+      }
+
+      p {
+        margin-block-start: 0.2rem !important;
+        margin-block-end: 0.2rem !important;
+      }
+
+      h3 {
+        margin-block-start: 0.5rem !important;
+        margin-block-end: 0.5rem !important;
+      }
+
+      .header-img {
+        background-image: url(./svgs/header_img.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .contact-info {
+        font-size: 16px;
+        color: black;
+      }
+
+      .contact-info p {
+        margin-block-start: 1rem !important;
+        margin-block-end: 1rem !important;
+      }
+
+      .contact-info p span {
+        margin-right: 10px;
+      }
+
+      .key-skills li {
+        font-size: 16px;
+        color: black;
+        margin-bottom: 10px;
+      }
+
+      .social-activities li {
+        font-size: 16px;
+        color: black;
+        margin-bottom: 10px;
+      }
+
+      .hobbies li {
+        font-size: 16px;
+        color: black;
+        margin-bottom: 10px;
+      }
+
+      .language li {
+        font-size: 16px;
+        color: black;
+        margin-bottom: 10px;
+      }
+
+      .inner-ul li {
+        margin-bottom: 10px;
+      }
+      .header-title {
+        padding-top: 20px;
+        width: 60%;
+        margin-left: auto;
+        text-align: left;
+      }
+      .header-title h1 {
+        margin: 0;
+        color: #fff;
+        font-size: 45px;
+        font-weight: 500;
+      }
+      .header-title h3 {
+        margin: 0;
+        color: #fff;
+        font-size: 32px;
+        font-weight: 400;
+      }
+      .body {
+        margin-top: -150px;
+        display: block;
+        position: relative;
+        z-index: -1;
+        /* padding-top: 60px; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <table>
+      <tr style="width: 100%">
+        <div>
+          <img src="./svgs/header_img.svg" width="100%" alt="" />
+        </div>
+      </tr>
+      <td>
+        <div class="">
+          <h1 style="color: white; text-transform: capitalize">Alon Saly</h1>
+          <h2 style="color: white; text-transform: capitalize">Tel Aviv</h2>
+        </div>
+      </td>
+    </table> -->
+    <center>
+      <table width="820px" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td
+            align="center"
+            colspan="2"
+            style="
+              width: 100%;
+              background: url('<%= imagePath %>/svgs/header_img.svg') no-repeat;
+              background-position: left 0 top -130px;
+              background-size: cover;
+              height: 280px;
+              vertical-align: top;
+            "
+          >
+            <div class="header-title">
+                <br />
+                <br />
+                <br />
+              <h1><%= details[0]?.name %></h1>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="body">
+            <table>
+              <tr align="top">
+                <td
+                  style="
+                    width: 30%;
+                    background-color: #fafafa;
+                    border-right: 1px solid #f0f0f0;
+                    height: 100%;
+                    vertical-align: top;
+                    padding-top: 120px;
+                  "
+                >
+                  <table
+                    width="100%"
+                    border="0"
+                    cellspacing="0"
+                    cellpadding="0"
+                  >
+                    <tr style="vertical-align: top">
+                      <td style="padding: 0 20px">
+                        <div class="contact-info">
+                          <% var phoneCheck = (details[0]?.phone)?.indexOf('NO field present');%>
+                          <% if(phoneCheck == -1) {  %>
+                          <p>
+                            <span
+                              ><img
+                                src="<%= imagePath %>/svgs/call.svg"
+                                alt=""
+                                width="10" /></span
+                            ><%= details[0]?.phone %>
+                          </p>
+                          <% } %>
+
+                          <% var emailCheck = (details[0]?.email)?.indexOf('NO field present');%>
+                          <% if(emailCheck == -1) {  %>
+                          <p style="word-break:break-all;">
+                            <span><img src="<%= imagePath %>/svgs/mail.svg" alt="" /></span
+                            ><%= details[0]?.email %>
+                          </p>
+                          <% } %>
+                          
+                          <% var addressCheck = (details[0]?.address)?.indexOf('NO field present');%>
+                          <% if(addressCheck == -1) {  %>
+                          <p>
+                            <span><img src="<%= imagePath %>/svgs/location.svg" alt="" /></span
+                            ><%= details[0]?.address %>
+                          </p>
+                          <% } %>
+                          <!-- <p>
+                            <span><img src="<%= imagePath %>/svgs/linkedin.svg" alt="" /></span
+                            ><a href="#" style="text-decoration: underline"
+                              >Alon Saly</a
+                            >
+                          </p> -->
+                        </div>
+
+                        <div>
+                          <h2
+                            style="
+                              font-size: 18px;
+                              letter-spacing: 2px;
+                              text-transform: uppercase;
+                              margin-top: 30px;
+                              color: #3b4358;
+                            "
+                          >
+                            Key Skills
+                          </h2>
+
+                          <% 
+                            let skillLen = 0
+                            
+                            if(skills.length > 7)
+                            {
+                              skillLen = 7;
+                            }
+                          
+                          %>
+                          <% for (let i = 0; i < skills.length; i++) { %>
+                          <ul class="key-skills">
+                                <% if(i<7) { %>
+                                <li>
+                                  <%= skills[i] %>
+                                </li>
+                                <% } %>
+                              </ul>
+                              <% } %>
+                        </div>
+
+                        <% var checksocialAct =  (socialActivity[0])?.indexOf('SECTION NOT FOUND') %>
+                        <% if(checksocialAct == -1) { %>
+                        <div>
+                          <h2
+                            style="
+                              font-size: 18px;
+                              letter-spacing: 2px;
+                              text-transform: capitalize;
+                              margin-top: 40px;
+                              color: #3b4358;
+                            "
+                          >
+                            Social Activities <br />
+                            & Volunteering
+                          </h2>
+
+                          <ul class="social-activities">
+                            <% for (let i = 0; i < socialActivity.length; i++) { %>
+                              <% if(i < 4) { %>
+                            <li> <%= socialActivity[i] %></li>
+                            <% } %>
+                            <% } %>
+                          </ul>
+                        </div>
+                        <% } %>
+
+                        <% var checkHobbies =  (hobbies[0])?.indexOf('SECTION NOT FOUND') %>
+                        <% if(checkHobbies == -1) { %>
+                        <div>
+                          <h2
+                            style="
+                              font-size: 18px;
+                              letter-spacing: 2px;
+                              text-transform: capitalize;
+                              margin-top: 40px;
+                              color: #3b4358;
+                            "
+                          >
+                            Hobbies
+                          </h2>
+
+                          <ul class="hobbies">
+                            <% for (let i = 0; i < hobbies.length; i++) { %>
+                              <% if(i < 4) { %>
+                            <li> <%= hobbies[i] %></li>
+                            <% } %>
+                            <% } %>
+                          </ul>
+                        </div>
+                        <% } %>
+                        
+                        <% var checklanguages =  (language)?.indexOf('SECTION NOT FOUND') %>
+                        <% if(checklanguages == -1) { %>
+                        <div>
+                      
+                          <%
+                          var flag = 0;
+                          var langcheck1 = (language[0]?.language)?.indexOf('NO field present');  
+                          var fluencycheck1 = (language[0]?.fluency)?.indexOf('NO field present');
+                          %>
+                          
+                          
+                          <%
+                          if((langcheck1 == -1 || fluencycheck1 == -1)  && (flag == 0)) {
+                            flag = 1;
+                          %>
+                            
+                          <h2
+                            style="
+                              font-size: 18px;
+                              letter-spacing: 2px;
+                              text-transform: capitalize;
+                              margin-top: 40px;
+                              color: #3b4358;
+                            "
+                          >
+                            Language
+                          </h2>
+<% } %>
+                          <ul class="language">
+                            <% for (let i = 0; i < language.length; i++) { %>
+                              <% if(i < 4) { %>
+                                <%
+                                var langcheck = (language[i]?.language)?.indexOf('NO field present')  
+                                var fluencycheck = (language[i]?.fluency)?.indexOf('NO field present')  
+ 
+                                const array = [
+                                'english',
+                                'mandarin chinese',
+                                'spanish',
+                                'hindi',
+                                'arabic',
+                                'bengali',
+                                'portuguese',
+                                'russian',
+                                'japanese',
+                                'punjabi',
+                                'german',
+                                'javanese',
+                                'wu',
+                                'malay',
+                                'telugu',
+                                'vietnamese',
+                                'korean',
+                                'french',
+                                'marathi',
+                                'tamil',
+                                'urdu',
+                                'turkish',
+                                'italian',
+                                'yoruba',
+                                'thai',
+                                'gujarati',
+                                'jinyu',
+                                'southern min',
+                                'hakka',
+                                'ukrainian',
+                                'oromo',
+                                'igbo',
+                                'uzbek',
+                                'sindhi',
+                                'amharic',
+                                'fula',
+                                'romanian',
+                                'azerbaijani',
+                                'dutch',
+                                'kurdish',
+                                'serbo-croatian',
+                                'malagasy',
+                                'saraiki',
+                                'nepali',
+                                'sinhala',
+                                'chittagonian',
+                                'zhuang',
+                                'khmer',
+                                'turkmen',
+                                'assamese',
+                                'madurese',
+                                'somali',
+                                'marwari',
+                                'magahi',
+                                'haryanvi',
+                                'hungarian',
+                                'chhattisgarhi',
+                                'greekt',
+                                'chewa',
+                                'deccan',
+                                'akan',
+                                'kazakh',
+                                'northern min',
+                                'sylheti',
+                                'zulu',
+                                'czech',
+                                'kinyarwanda',
+                                'dhundhari',
+                                'haitian creole',
+                                'eastern min',
+                                'fuzhou',
+                                'ijaw',
+                                'minangkabau',
+                                'kirundi',
+                                'taiwanese',
+                                'sunda',
+                                'arusi',
+                                'balochi',
+                                'lithuanian',
+                                'gombe',
+                                'mossi',
+                                'tswana',
+                                'luganda',
+                                'gujarati',
+                                'kanauji',
+                                'xhosa',
+                                'kashmiri',
+                                'sranan tongo',
+                                'xiang',
+                                'flemish',
+                                'kumaoni',
+                                'santali',
+                                'tachelhit',
+                                'nigerian fulfulde',
+                                'manx',
+                                'sichuan yi',
+                                'tulu',
+                                'kanuri',
+                                'kanjar',
+                                'ganda',
+                                'batak',
+                                'konkani',
+                                'slovak',
+                                'nias',
+                                'ewondo',
+                                'gikuyu',
+                                'irish',
+                                'pampangan',
+                                'maithili',
+                                'zarma',
+                                'frisian',
+                                'upper sorbian',
+                                'kabyle',
+                                'waray-waray',
+                                'farshori',
+                                'sardinian',
+                                'kikuyu',
+                                'gondi',
+                                'saraki',
+                                'kapampangan',
+                                'gagauz',
+                                'saraiki',
+                                'southern min',
+                                'huizhou',
+                                'sakha',
+                                'serer',
+                                'cree',
+                                'mongolian',
+                                'luxembourgish',
+                                'chuvash',
+                                'tumbuka',
+                                'chechen',
+                                'maltese',
+                                'tok pisin',
+                                'tajik',
+                                'persian',
+                                'lingala',
+                                'sylheti',
+                                'papiamento',
+                                'chichewa',
+                                'tigrinya',
+                                'zhuang',
+                                'kashubian',
+                                'kongo',
+                                'palauan',
+                                'nahuatl',
+                                'sundanese',
+                                'northern sotho',
+                                'gilaki',
+                                'bashkir',
+                                'chamorro',
+                                'papiamentu',
+                                'kapampangan',
+                                'lemba',
+                                'hawaiian',
+                                'luxembourgish',
+                                'rotuman',
+                                'samoan',
+                                'faroe islands',
+                                'greenlandic',
+                                'maori',
+                                'tahitian',
+                                'silesian',
+                                'nuosu',
+                                'lakota',
+                                'northern mari',
+                                'cherokee',
+                                'lower sorbian',
+                                'inuktitut',
+                                'ingush',
+                                'hopi',
+                                'whitesands',
+                                'huichol',
+                                'mikmaq',
+                                'blackfoot',
+                                'guambiano',
+                                'anishinaabe',
+                                'paiute',
+                                'mayan',
+                                'nahuatl',
+                                'inuktitut',
+                                'mixtec',
+                                'caddo',
+                                'ichishkiin',
+                                'maipure',
+                                'palikur',
+                                'pirahã',
+                                'qawasqar',
+                                'sapé',
+                                'waorani',
+                                'waura',
+                                'xokleng',
+                                'yagua',
+                                'zapotec',
+                                'aymara',
+                                'guarani',
+                                'kaingang',
+                                'mapuche',
+                                'quechua',
+                                'tupi',
+                                'wayuu',
+                                'baniwa',
+                                'tukano',
+                                'cayuvava',
+                                'carib',
+                                'macushi',
+                                'yanomami',
+                                'tariana',
+                                'tukano',
+                                'kukama',
+                                'tucano',
+                                'panare',
+                                'cubeo',
+                                'huitoto',
+                                'yukpa',
+                                'kariri',
+                                'mura',
+                                'trumai',
+                                'tenharim',
+                                'aikanã',
+                                'terena',
+                                'paresi',
+                                'xerente',
+                                'tapirapé',
+                                'kayapo',
+                                'aweti',
+                                'krenak',
+                                'guajajara',
+                                'kadiweu',
+                                'terena',
+                                'kaingang',
+                                'kanela',
+                                'urubú-kaapor',
+                                'urubú',
+                                'tupinambá',
+                                'tupiniquim',
+                                'tembé',
+                                'caraja',
+                                'pirahã',
+                                'tariana',
+                                'siriano',
+                                'yawalapiti',
+                                'baniwa',
+                                'xavante',
+                                'fulniô',
+                                'kaxinawa',
+                                'xipaya',
+                                'surui',
+                                'karitiana',
+                                'kapixana',
+                                'karipuna',
+                                'kanamari',
+                                'karo',
+                                'kuikuro',
+                                'waurá',
+                                'awetí',
+                                'mamaindê',
+                                'sateré-mawé',
+                                'kanamari',
+                                'arawak',
+                                'karipuna',
+                                'karo',
+                                'paresi',
+                                'tenharim',
+                                'waiwai',
+                                'wayampi',
+                                'suruí',
+                                'macushi',
+                                'kukama',
+                                'chayahuita',
+                                'bororo',
+                                'sakirabia',
+                                'baré',
+                                'anambé',
+                                'apiaká',
+                                'jiripancó',
+                                'karajá',
+                                'kaingáng',
+                                'suyá',
+                                'kadiwéu',
+                                'teréna',
+                                'nambiquara',
+                                'puri',
+                                'paresí',
+                                'kadiwéu',
+                                'kanela',
+                                'tikúna',
+                                'tunayana',
+                                'marubo',
+                                'awa-guajá',
+                                'matis',
+                                'panará',
+                                'maku',
+                                'guajajára',
+                                'krenak',
+                                'karo',
+                                'tikúna',
+                                'amahuaca',
+                                'madihá',
+                                'kambeba',
+                                'kaixana',
+                                'pirahá',
+                                'matís',
+                                'maku',
+                                'matis',
+                                'amahuaca',
+                                'sharanahua',
+                                'amahuaca',
+                                'matsés',
+                                'maku',
+                                'matsés',
+                                'maku',
+                                'pirahá',
+                                'matís',
+                                'amahuaca',
+                                'maku',
+                                'matis',
+                                'amahuaca',
+                                'sharanahua',
+                                'matís',
+                                'matís',
+                                'amahuaca',
+                                'matsés',
+                                'matsés',
+                                'matsés',
+                                'matsés',
+                                'matsés',
+                                'matsés',
+                                'matsés',
+                                'matsés',
+                                'matsés',
+                                'matsés',
+                                'matsés',
+                                'matsés',
+                                'matsés',
+                                'matsés',
+                              ];
+                              
+                                const lowercaselang = (language[i]?.language).toLowerCase()
+                                const isPresent = array.includes(lowercaselang);
+ 
+ 
+                               %>
+                               <% if(langcheck == -1 && fluencycheck == -1) { %>
+                            <li> 
+                             
+                              
+                             <% if(langcheck == -1) {%> <%= language[i]?.language %> <% } %>  <%  if(fluencycheck == -1 && isPresent == true) { %>-<%= language[i]?.fluency %> <%}%>
+                            
+                            </li>
+
+                            <% } %>
+                            <% } %>
+                            <% } %>
+                          </ul>
+                        </div>
+                        <% } %>
+
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td style="width: 70%; padding-left: 25px; padding-top: 60px; vertical-align: top;">
+                  <table
+                    width="100%"
+                    border="0"
+                    cellspacing="0"
+                    cellpadding="0"
+                  >
+                    <tr style="vertical-align: top">
+                      <td>
+                     
+                        <div>
+                          
+                          <% if(experience[0].title != 'NOT PRESENT' ||  experience[0].date !== 'NOT PRESENT' || experience[0].description !== 'NOT PRESENT'  ) { %>
+                            <h2
+                            style="
+                              font-size: 18px;
+                              letter-spacing: 2px;
+                              text-transform: uppercase;
+                              margin-top: 30px;
+                              color: #ff7650;
+                              font-weight: bold;
+                            "
+                          >
+                            Professional Experience
+                          </h2>
+
+                          <% } %>
+
+                          <% for (let i = 0; i < experience.length; i++) { %>
+                          <% var titleCheck =  (experience[i]?.title)?.indexOf('NOT PRESENT');
+                            if(titleCheck == -1) {
+                          %> 
+                          <h3
+                            style="
+                              text-transform: capitalize;
+                              font-weight: bold;
+                              font-size: 16px;
+                            "
+                          >
+                          <%= experience[i]?.title %>
+                          </h3>
+                          <% } %>
+                        </div>
+
+                        <% var dateCheck =  (experience[i]?.date)?.indexOf('NOT PRESENT');
+                        if(dateCheck == -1) {
+                      %> 
+                        <div>
+                          <p style="font-size: 16px; color: black">
+                            <%= experience[i].date %> 
+                        </div>
+                      <% } %>
+                     
+                          <div>
+                            <% var descArr = experience[i]?.description?.split(";"); %>
+                            <% for (let i = 0; i < descArr.length; i++) { %>
+
+
+
+                              
+                            <ul class="outer-ul">
+                              <% var exp_des_index = (descArr[i])?.indexOf('NOT PRESENT');  
+                              if(exp_des_index == -1) {
+                              %>
+                              <li style=" margin-bottom: 10px">
+                                <%= descArr[i] %>.
+                              </li>
+                              <% } %>
+                            </ul>
+                            <% } %>
+                          </div>
+  
+                          <% }; %>
+                       
+
+                        <div>
+                         
+
+                        <div>
+                         
+                            <%
+                            var edutitle = (education[0]?.title)?.indexOf('NO FIELD PRESENT') 
+                            var educollege = (education[0]?.college)?.indexOf('NO FIELD PRESENT') 
+                            var edumarks = (education[0]?.marks)?.indexOf('NO FIELD PRESENT') 
+                            var edudate = (education[0]?.date)?.indexOf('NO FIELD PRESENT') 
+                            %>
+                            <% if(edutitle == -1 || educollege == -1 || edumarks == -1 || edudate == -1) { %>
+                          <h2
+                            style="
+                              font-size: 18px;
+                              letter-spacing: 3px;
+                              text-transform: uppercase;
+                              margin-top: 30px;
+                              color: #ff7650;
+                              font-weight: bold;
+                            "
+                          >
+                            Education
+                          </h2>
+                          <% } %>
+                          
+
+                          <% for (let i = 0; i < education.length; i++) { %>
+                          <ul class="inner-ul">
+                            <%
+                            var edutitle = (education[i]?.title)?.indexOf('NO FIELD PRESENT') 
+                            var educollege = (education[i]?.college)?.indexOf('NO FIELD PRESENT') 
+                            var edumarks = (education[i]?.marks)?.indexOf('NO FIELD PRESENT') 
+                            var edudate = (education[i]?.date)?.indexOf('NO FIELD PRESENT') 
+                            %>
+
+                            <% if(edutitle == -1 || educollege == -1 || edumarks == -1 || edudate == -1) { %>
+                            <li>
+                                <% if(edutitle == -1){ %> <%=   education[i]?.title  %> | <% }  %>  
+                                <% if(educollege == -1){ %> <%=  education[i]?.college  %> | <% } %>
+                                <% if(edumarks == -1){ %> <%=  education[i]?.marks  %> | <% } %> 
+                                <% if(edudate == -1){ %>  <%=  education[i]?.date %> <% } %>
+                            </li>
+                            <% } %>
+                          </ul>
+                          <% } %>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+.tailorHeadingText {
+  color: #4a4543;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 35px;
+  }
+  @media screen and (max-width: 1199px) {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  @media screen and (max-width: 991px) {
+    font-size: 24px;
+  }
+}
+
+.tailorStaticText {
+  color: #808080;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 991px) {
+    font-size: 14px;
+  }
+}
+
+.textareaDiv {
+  margin-top: 20px;
+
+  // textarea {
+  //   width: 618px;
+  //   height: 451px !important;
+
+  //   @media screen and (max-width: 992px) {
+  //     width: 100%;
+  //   }
+  // }
+  .ant-form {
+    .ant-form-item {
+      margin-bottom: 20px;
+      .ant-form-item-control-input {
+        .ant-form-item-control-input-content {
+          display: flex;
+          flex-wrap: wrap;
+          button {
+            max-width: 230px;
+            width: 100%;
+            box-shadow: none;
+            height: 45px;
+            // max-width: 230px;
+            // font-size: 20px;
+            border-radius: 8px;
+            border: 1px solid #dadada;
+            background-color: #fff;
+            color: #4a4543;
+            margin-right: 20px;
+            cursor: pointer !important;
+            @media screen and (max-width: 1440px) {
+              height: 42px;
+              max-width: 200px;
+            }
+            @media screen and (max-width: 1199px) {
+              height: 40px;
+              max-width: 180px;
+            }
+            @media screen and (max-width: 991px) {
+              max-width: auto;
+              height: 38px;
+            }
+            @media screen and (max-width: 850px) {
+              max-width: 100%;
+              margin: 0 0 10px;
+            }
+            &:last-child {
+              margin-right: 0;
+            }
+            &:hover {
+              background-color: #fff !important;
+              color: #4a4543 !important;
+              border-color: #dadada !important;
+            }
+            span {
+              font-size: 20px;
+              color: #4a4543;
+              cursor: pointer !important;
+              @media screen and (max-width: 1440px) {
+                font-size: 18px;
+              }
+              @media screen and (max-width: 1199px) {
+                font-size: 16px;
+              }
+              @media screen and (max-width: 991px) {
+                font-size: 15px;
+              }
+            }
+          }
+
+          span {
+            @media screen and (max-width: 991px) {
+              width: 100%;
+            }
+
+            div {
+              @media screen and (max-width: 991px) {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ant-form-item-control-input {
+  width: 618px;
+
+  @media (max-width: 1199px) {
+    width: 45vw;
+  }
+}
+
+.errorClass {
+  color: red;
+  font-size: 16px;
+}
