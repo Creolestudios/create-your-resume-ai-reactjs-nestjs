@@ -1,0 +1,121 @@
+.headingText {
+  color: #4a4543;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 54px;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  @media screen and (max-width: 1440px) {
+    font-size: 38px;
+    line-height: 48px;
+  }
+  @media screen and (max-width: 1199px) {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+.paraText {
+  color: #808080;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 1.05px;
+  @media screen and (max-width: 1440px) {
+    font-size: 18px;
+    line-height: 23px;
+  }
+  @media screen and (max-width: 1199px) {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+.loginButtons {
+  display: flex;
+  flex-direction: column;
+
+  a {
+  }
+
+  button {
+    height: 45px;
+    max-width: 360px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid var(--stroke, #dadada);
+    cursor: pointer;
+    margin-top: 25px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  span {
+    margin-right: 8px;
+    display: flex;
+    // margin-top: 5px;
+  }
+}
+
+.terms {
+  display: flex;
+  margin-top: 25px;
+
+  span {
+    color: #808080;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.7px;
+    margin-left: 5px;
+  }
+
+  a {
+    color: var(--w-2, #de8c73);
+  }
+}
+
+.loginfooter {
+  padding: 0 20px 20px 20px;
+  position: fixed;
+  left: 15px;
+  bottom: 10px;
+}
+
+#sitecopyright {
+  font-size: 16px;
+
+  @media screen and (max-width: 991px) {
+    font-size: 10px;
+  }
+}
+
+.error {
+  font-size: 16px;
+  color: red;
+  margin-top: 15px;
+}
+
+.anchordisabled {
+  pointer-events: none;
+}
+
+.loginError {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.7px;
+  color: red;
+  margin-top: 5px;
+}

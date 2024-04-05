@@ -1,0 +1,146 @@
+.pdfViewer {
+  height: 100%;
+  width: 100%;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+
+  // @media screen and (max-width: 1440px) {
+  //   padding: 50px 20px;
+  // }
+  // @media screen and (max-width: 1199px) {
+  //   padding: 20px 20px;
+  // }
+  // @media screen and (max-width: 991px) {
+  //   padding: 10px 10px;
+  // }
+}
+
+#header-bar {
+  display: none;
+}
+
+#pdf-page-info {
+  display: none;
+}
+
+#pdf-download {
+  display: none;
+}
+
+// #pdf-zoom-reset {
+//   display: none;
+// }
+
+#pdf-toggle-pagination {
+  display: none;
+}
+
+.sloth-img {
+  position: absolute;
+  right: 0;
+}
+
+.sloth-img p {
+  position: relative;
+  right: 210px;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.05px;
+
+  @media screen and (max-width: 1199px) {
+    right: 160px;
+    font-size: 16px;
+    letter-spacing: 1.02px;
+  }
+
+  @media screen and (max-width: 991px) {
+    right: 120px;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+}
+
+.sloth-img img {
+  position: absolute;
+  right: 0;
+
+  @media screen and (max-width: 1199px) {
+    width: 250px;
+  }
+
+  @media screen and (max-width: 991px) {
+    width: 200px;
+  }
+}
+
+.download-loader {
+  background-color: #d9f0fe;
+  height: 100vh;
+
+  #loader-heading {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 69px 30px 0 30px;
+  }
+
+  .loading-points {
+    font-size: 22px;
+    padding: 0px 30px 0 30px;
+    text-decoration: none;
+    list-style: none;
+
+    li {
+      margin-top: 15px;
+    }
+
+    @media screen and (max-width: 1440px) {
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.sloth-gif {
+  // position: absolute;
+  // right: 0;
+  // display: flex;
+  // align-items: center;
+  // margin-top: 25px;
+  // justify-content: end;
+  .img1 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    @media screen and (min-width: 1530px) {
+      height: 400px;
+    }
+
+    // @media screen and (min-width: 1201px) and (max-width: 1400px) {
+    //   height: 300px;
+    // }
+
+    @media screen and (max-width: 1440px) {
+      height: 240px;
+    }
+
+    @media screen and (max-width: 1199px) {
+      height: 220px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      height: 150px;
+    }
+  }
+
+  // .img2 {
+  //   width: 117px;
+  //   height: 22px;
+  //   margin-top: 43px;
+  // }
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume 1</title>
+    <style>
+      body {
+        margin: 5px 5px;
+        padding: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      ul.two-items-per-line {
+        padding-left: 0;
+      }
+
+      ul.two-items-per-line li {
+        display: inline-block;
+        width: 45%;
+        margin-right: 2%;
+        position: relative;
+        padding-left: 20px; /* Add some spacing for the pseudo-element */
+      }
+
+      ul.two-items-per-line li::before {
+        content: '\2022'; /* Unicode bullet character */
+        position: absolute;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <table border="2" cellpadding="15" cellspacing="2" width="820px">
+        <tr>
+          <td class="body">
+            <h2 style="text-align: center"><%= myDetails[0]?.name %></h2>
+
+            <div style="display: flex; justify-content: space-between">
+
+              <% var emailName =   (myDetails[0]?.email)?.indexOf('NO');%>
+              <% var phoneName =   (myDetails[0]?.phone)?.indexOf('NO');%>
+
+              <% if(emailName == -1) { %>
+              <span><%= myDetails[0]?.email %></span>
+                <%}%>
+                <% if(phoneName == -1) { %>
+              <span><%= myDetails[0]?.phone %></span>
+              <%}%>
+            </div>
+            <hr style="height: 2px; background: black" />
+
+            <div class="executive-summary">
+              <h2 style="text-align: center; text-transform: capitalize">
+                Executive Summary:
+              </h2>
+
+              <p style="letter-spacing: 1px">
+               <%= aboutUs %>
+              </p>
+              
+            </div>
+
+            <div class="professional-experience">
+
+
+<% if(experience[0].title != 'NOT PRESENT' ||  experience[0].date !== 'NOT PRESENT' || experience[0].description !== 'NOT PRESENT'  ) { %>
+  <hr style="height: 2px; background: black" />            
+  <h3 style="text-transform: uppercase">Professional Experience</h3>
+             <% } %>
+
+              <% for (let i = 0; i < experience.length; i++) { %>
+                <% var index = (experience[i]?.description)?.indexOf("NO"); %>
+                <% if(index == -1) { %>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+
+                  font-weight: bold;
+                "
+              >
+              <% var titleCheck =  (experience[i]?.title)?.indexOf('NOT PRESENT');
+              if(titleCheck == -1) {
+            %> 
+                <span style="text-transform: capitalize"
+                  ><%= experience[i].title %></span
+                >
+                <% } %>
+
+                <% var dateCheck =  (experience[i]?.date)?.indexOf('NOT PRESENT');
+                if(dateCheck == -1) {
+              %> 
+                <span><%= experience[i]?.date %></span>
+                <% }%>
+              </div>
+              <% var descArr = experience[i]?.description?.split(";"); %>
+              <% for (let i = 0; i < descArr.length; i++) { %>
+              <ul>
+                <% var exp_des_index = (descArr[i])?.indexOf('NOT PRESENT');  
+                if(exp_des_index == -1) {
+                %>
+                <li>
+                  <%= descArr[i] %>
+                </li>
+                <% } %>
+              </ul>
+              <% } %>
+              <% } %>
+              <% } %>
+           
+            </div>
+            
+
+            
+            <div class="education">
+              
+              <%
+              var edutitle = (education[0]?.title)?.indexOf('NO FIELD PRESENT') 
+              var educollege = (education[0]?.college)?.indexOf('NO FIELD PRESENT') 
+              var edumarks = (education[0]?.marks)?.indexOf('NO FIELD PRESENT') 
+              var edudate = (education[0]?.date)?.indexOf('NO FIELD PRESENT') 
+              %>
+              <% if(edutitle == -1 || educollege == -1 || edudate == -1 || edumarks == -1) {%>
+                <hr style="height: 2px; background: black" />
+              <h3 style="text-transform: uppercase">Education:</h3>
+                <% } %>
+
+
+
+              <% for (let i = 0; i < education.length; i++) { %>
+
+              <%
+              var edutitle = (education[i]?.title)?.indexOf('NO FIELD PRESENT') 
+              var educollege = (education[i]?.college)?.indexOf('NO FIELD PRESENT') 
+              var edumarks = (education[i]?.marks)?.indexOf('NO FIELD PRESENT') 
+              var edudate = (education[i]?.date)?.indexOf('NO FIELD PRESENT') 
+              %>
+
+              <div style="display: flex; justify-content: space-between; margin: 0; padding: 0;">
+              
+                <% if(edutitle == -1){ %>
+              <p style="text-transform: capitalize; font-weight: bold; margin-block-start: 0.40em !important; margin-block-end: 0.40em !important;">
+                <%=  education[i]?.title %>
+              </p>
+                <% } %>
+
+                <% if(edudate == -1){ %>
+              <p style="text-transform: capitalize; font-weight: bold; margin-block-start: 0.40em !important; margin-block-end: 0.40em !important;">
+               <%=  education[i]?.date %>
+              </p>
+              <% } %>
+            </div>
+            <% if(edumarks == -1){ %>   <p style="font-weight: bold; margin-block-start: 0.40em !important; margin-block-end: 0.40em !important;"><%=  education[i]?.marks %></p><%}%>
+             <% if(educollege == -1){ %>  <p style=" margin-block-start: 0.40em !important; margin-block-end: 0.40em !important;"><%=  education[i]?.college %></p> <%}%>
+              <% } %>
+            </div>
+
+            <hr style="height: 2px; background: black" />
+
+            <div class="achievements">
+              <% var checkAchieve = achievement[0]?.indexOf("SECTION NOT FOUND");  %>
+              <% if(checkAchieve == -1) { %>
+              <h3 style="text-transform: uppercase">
+                Achievements / SPECIALTY SKILLS
+              </h3>
+              <h3>Achievements:</h3>
+              <ul>
+                <% for (let i = 0; i < achievement?.length; i++) { %>
+                <li>
+                  <%= achievement[i] %>
+                </li>
+                <% } %>
+              </ul>
+              <% } %>
+              <h3 style="text-transform: capitalize">
+                Technical Skills: 
+              </h3>
+              <ul>
+                <% for (let i = 0; i < skills.length; i++) { %>
+                  <% if(i<7) { %>
+                <li>
+                  <%= skills[i] %>
+                </li>
+                <% }%>
+                <% }; %>
+              </ul>
+            </div>
+
+            <hr style="height: 2px; background: black" />
+
+            <div class="academic-courses">
+              <%  var checkAcademic =  academic[0]?.indexOf("SECTION NOT FOUND"); %>
+              <% if( checkAcademic == -1) { %>
+              <h3 style="text-transform: uppercase">
+                Academic Courses of Interest:
+              </h3>
+              <%}%>
+              <ul class="two-items-per-line">
+                <% for (let i = 0; i < academic.length; i++) { 
+                  var checkAcademic =  academic[i]?.indexOf("SECTION NOT FOUND");
+                  %>
+                  <% if( checkAcademic == -1) { %>
+                <li><%= academic[i] %></li>
+                <%}%>
+                <% } %>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
+</html>
